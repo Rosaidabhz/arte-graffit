@@ -1,0 +1,389 @@
+body, html {
+  margin: 0;
+  padding: 0;
+
+}
+
+#container-room {
+  height: 100vh;
+  width: 100vw;
+  perspective: 2500px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.room {
+  transform-style: preserve-3d;
+  display: flex;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.scroll-item {
+  flex: 0 0 100vw;
+  position: relative;
+  transform-style: preserve-3d;
+
+}
+.shadow {
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-size: cover;
+  z-index: 1;
+  width: 100%;
+
+}
+
+.content01 {
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+
+}
+.scroll-item {
+  transform: translateZ(-540px);
+}
+
+
+
+
+
+.left-wall {
+  transform:  rotateY(90deg) translateZ(0vw);
+  background-size: cover;
+  background-size: 30%;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0vw;
+  transform-origin: left;
+}
+
+.right-wall {
+  width: 200vw;
+  background-size: cover;
+  background-size: 30%;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 400vw;
+  transform:  rotateY(-90deg);
+  transform-origin: right;
+}
+
+.ceiling {
+  position: absolute;
+  top: 0vh; 
+  left: 0vw; 
+  height: 89%;
+  width: 600vw;
+  background-color: rgb(155, 22, 22); 
+  transform: rotateX(271deg);
+  transform-origin: top; 
+}
+
+.fooler {
+  position: absolute;
+  bottom: 0vh; 
+  left: 0vw; 
+  height: 89%;
+
+  background-repeat: repeat;
+  width: 600vw; 
+  background-color: rgb(241, 63, 63); 
+  transform: rotateX(90deg) translateZ(0vh);
+  transform-origin: bottom;
+  z-index: -1; 
+
+}
+
+
+
+
+
+
+.zocalo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 130px;
+  transform-origin: bottom left;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  margin-top: 100%;
+}
+
+
+.zocalo-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #dcdcdc;
+    transform: skewY(-0deg);
+    transform-origin: top left;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    background-size: contain;
+    background-size: cover;
+    background-size: 100%;
+    background-repeat: repeat-x;
+    z-index: 0;
+
+  }
+
+.light-effect {
+  position: absolute;
+}
+
+.light-effect:before {
+  content: "";
+  position: absolute;
+  top: -100%; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px; 
+  height: 300px; 
+  background-color: rgba(255, 255, 255, 0.473); 
+  border-radius: 1300%;
+  border: transparent;
+  box-shadow: 0 0 500px rgba(255, 255, 254, 10.979); 
+  z-index: 555;  display: none; 
+
+}
+.light-effect.light-on:before {
+  display: block;
+}
+
+.vertical-button {
+  float: left;
+  justify-content: center;
+  align-items: center;
+  width: 20px; 
+  height: 30px; 
+  text-align: center; 
+  background-color: white; 
+  color: #000; 
+  cursor: pointer; 
+}
+
+
+.artwork {
+  margin: 10px;
+  position: relative;
+  border-bottom: 0;
+  box-shadow: 11px 5px 6px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  overflow: hidden;
+
+}
+
+
+.artwork img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+
+}
+.artwork-name {
+  text-align: center;
+  font-size: 15px;
+  width: 100px;
+  background-color: rgba(139, 97, 57, 0.7);
+  padding: 5px;
+  margin: 0;
+}
+
+
+.artwork:hover img {
+  transform: scale(1.2);
+}
+
+.artwork.zoomed img {
+  transform: scale(1.2);
+}
+
+
+.photo-collage {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20%;
+  margin-top: 0rem;  
+  margin-bottom:6rem;
+
+}
+.photo-collage01 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.photo {
+  flex: 1 0 calc(33.33% - 30px);
+  margin: 15px;
+  border: 2px solid black;
+}
+
+.photo-alone{
+  margin-bottom: 90px;
+}
+.photo img {
+  width: 100%;
+  height: auto;
+}
+.square-image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; 
+}
+
+.square-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.custom-image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 150%;
+}
+img{
+  cursor: pointer;
+  z-index: 5;
+
+}
+.custom-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+
+}
+.camera {
+  filter: drop-shadow(5px 8px 3px rgba(0, 0, 0, 0.25));
+  top: 0rem;
+  left: 0;
+  z-index: 33333;
+  transform: translateZ(-360px)  translateY(0px) translateX(30px);
+
+}
+
+.light{
+  width: 100vw;
+  height: -100vh;
+  transform: translateZ(-500px);
+}
+
+.light02 {
+width: 100vw;
+height: -100vh;
+transform: translateZ(-500px) translateX(200vw);
+}
+.light03 {
+  width: 100vw;
+  height: -100vh;
+  transform: translateZ(-500px) translateX(105vw);
+  }
+  .light04{
+    width: 100vw;
+    height: -100vh;
+    transform: translateZ(-500px) translateX(400vw);   
+  }
+.barra{
+  width: 400px;
+  bottom: 0;
+  transform:translateZ(-300px) translateX(105vw);
+}
+
+.banco02{
+  bottom: 0;
+  transform: perspective(20000px) translateZ(400px)translateX(230vw) ;
+}
+.banco03{
+  bottom: 0;
+  transform: translateZ(400px) translateX(335vw) ;
+}
+
+.barra02{
+  width: 400px;
+  bottom: 0;
+  transform: translateZ(-300px) translateX(167vw);
+}
+.glass01{
+  bottom: 0;
+  transform: translateZ(-100px) translateX(295vw) scaleX(-1);
+  ;
+}
+.glass{
+  bottom: 0;
+  transform: translateZ(-100px) translateX(395vw) scaleX(1);
+  ;
+}
+.guard{
+  bottom: 0;
+  transform: translateZ(-100px) translateX(495vw) scaleX(1);
+  ;
+}
+.banco{
+  bottom: 0;
+  transform: perspective(20000px) translateZ(400px) translateX(35vw)  ;
+  filter: drop-shadow(5px 0px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.25);
+}
+.modal {
+  z-index: 999;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.377);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.modal img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  padding: 50px;
+}
+
+
+.close {
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  cursor: pointer;
+}
+.door{
+  z-index: 4;
+}
